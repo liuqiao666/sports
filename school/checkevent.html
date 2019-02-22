@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>体艺赛事综合管理系统-审核校内赛事</title>
+  <link rel="stylesheet" href="../assets/css/layui.css">
+  <link rel="stylesheet" href="../assets/css/pc_global.css">
+</head>
+<body>
+<div  class="msgindex2"> 
+	<table class="layui-hide" id="test" lay-filter="test"></table>
+	<script type="text/html" id="toolbarDemo" class="layui-form">
+		<div class="headTable">
+		  <div class="layui-inline">
+		    <input class="layui-input" name="id" id="demoReload" autocomplete="off" placeholder="赛事名称：">
+		  </div>
+		  <button class="layui-btn blue" data-type="reload">搜索</button>
+	    <button class="layui-btn blue" onclick="window.location.reload();"><i class="layui-icon layui-icon-refresh-3"></i> 刷新</button>
+		  
+	    <div class="layui-input-inline male3">
+	      <select name="kind">
+	        <option value="">请选择赛事类型</option>
+	        <option value="男子组" selected="">男子组</option>
+	        <option value="女子组">女子组</option>
+	        <option value="混合组">混合组</option>
+	      </select>
+	    </div>
+	  </div>
+	</script>
+	<script type="text/html" id="matchimg">
+		<img src="{{ d.matchimg }}">
+	</script>
+	<script type="text/html" id="state">
+		<span class="layui-badge layui-bg-orange">{{ d.state }}</span>
+	</script>
+	<script type="text/html" id="barDemo">
+		<a class="layui-btn layui-btn-xs suf"><i class="layui-icon layui-icon-ok"></i>通 过 </a>
+		<a class="layui-btn layui-btn-danger layui-btn-xs fail"><i class="layui-icon layui-icon-close"></i>驳 回 </a>
+	</script>
+</div> 
+
+<script src="../assets/layui.js"></script>
+<script>
+layui.use(['element','layedit'], function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  $ = layui.jquery;
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+
+layui.use('table', function(){
+  var table = layui.table;
+  
+  table.render({
+    elem: '#test'
+    ,url:'../assets/data/checkevent.json'
+    ,toolbar: '#toolbarDemo'
+    ,title: '用户数据表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'center'}
+      ,{field:'id', title:'序号', width:80, fixed: 'left', unresize: true, sort: true}
+      ,{field:'matchname', title:'报名赛事名称', see: 'text'}
+      ,{field:'matchkind', title:'报名赛事类型', see: 'text'}
+      ,{field:'area', title:'报名地市区名称', see: 'text'}
+      ,{field:'team', title:'报名团队'}
+      ,{field:'teacher', title:'团队负责人'}
+      ,{field:'description', title:'团队简介'}
+      ,{field:'state', title:'状态', templet: '#state'}
+      ,{field:'operation', title:'操作', toolbar: '#barDemo', width:180}
+    ]]
+    ,page: true
+    ,done: function(res, curr, count){
+  $('.suf').on('click',function(){
+	//提示
+	layer.msg('通过成功！', {icon: 1});
+	//location.reload();
+    layer.close(index);
+    setTimeout(function(){location.href='checkevent.html'},1000)
+ })
+  $('.fail').on('click',function(){
+	//提示
+	layer.msg('驳回成功！', {icon: 1});
+	//location.reload();
+    layer.close(index);
+    setTimeout(function(){location.href='checkevent.html'},1000)
+ })
+  	}
+  });
+});
+</script>
+</body>
+</html>

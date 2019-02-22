@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>体艺赛事综合管理系统-编辑区县级团队</title>
+  <link rel="stylesheet" href="../assets/css/layui.css">
+  <link rel="stylesheet" href="../assets/css/pc_global.css">
+</head>
+<body>
+<div class="cfb msg">
+<fieldset class="layui-elem-field layui-field-title mt3">
+  <legend>编辑区县级团队</legend>
+</fieldset>
+<div class="layui-form layui-form-pane">
+	<div class="layui-form-item">
+    <div class="layui-input-block" style="margin-left: 0;">
+      <input type="radio" name="kind" value="足球团队" title="足球团队" checked="">
+      <input type="radio" name="kind" value="篮球团队" title="篮球团队">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">团队名称</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" autocomplete="off" placeholder="请输入团队名称" class="layui-input" value="团队名称">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">团队负责人</label>
+    <div class="layui-input-block">
+      <select name="interest" lay-filter="aihao">
+        <option value="1">吴青海</option>
+        <option value="2">刘玉强</option>
+        <option value="3">王天华</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">团队类型</label>
+    <div class="layui-input-block">
+      <select name="interest" lay-filter="aihao">
+        <option value="1">男子组</option>
+        <option value="2">女子组</option>
+        <option value="3">混合组</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item layui-form-text">
+    <label class="layui-form-label">团队简介</label>
+    <div class="layui-input-block">
+      <textarea name="desc" placeholder="请输入内容（最多50个字）" class="layui-textarea">团队简介团队简介团队简介团队简介</textarea>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn suf" lay-submit="" lay-filter="demo1">确认</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</div>
+</body> 
+<script src="../assets/layui.js"></script>
+<script>
+layui.use(['element','layedit'], function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  $ = layui.jquery;
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+  
+  $('.suf').on('click',function(){
+	layer.msg('更新成功！', {icon: 1});
+	setTimeout(function(){location.href='selfdatas.html'},1000)
+ })
+});
+</script>
+</html>        
+        

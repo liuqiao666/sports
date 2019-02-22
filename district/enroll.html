@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>体艺赛事综合管理系统-报名市级赛事</title>
+  <link rel="stylesheet" href="../assets/css/layui.css">
+  <link rel="stylesheet" href="../assets/css/pc_global.css">
+</head>
+<body>
+<div  class="msgindex2"> 
+	<table class="layui-hide" id="test" lay-filter="test"></table>
+	<script type="text/html" id="toolbarDemo" class="layui-form">
+		<div class="headTable">
+		  <div class="layui-inline">
+		    <input class="layui-input" name="id" id="demoReload" autocomplete="off" placeholder="赛事名称：">
+		  </div>
+		  <button class="layui-btn blue" data-type="reload">搜索</button>
+	    <div class="layui-input-inline male3">
+	      <select name="kind">
+	        <option value="" selected="">请选择赛事类型</option>
+	        <option value="足球">足球</option>
+	        <option value="篮球">篮球</option>
+	      </select>
+	    </div>
+	        <button class="layui-btn blue refresh" onclick="window.location.reload();"><i class="layui-icon layui-icon-refresh-3"></i> 刷新</button>
+	  </div>
+	</script>
+	<script type="text/html" id="matchimg">
+		<img src="{{ d.matchimg }}">
+	</script>
+	<script type="text/html" id="barDemo">
+		<a href="javascript:;" onclick="layer_box('赛事详情页面','events.html','96vw','84vh');" class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">
+			<i class="layui-icon layui-icon-search"></i>
+		</a>
+		<a class="layui-btn layui-btn-danger layui-btn-xs enroll">
+			报 名
+		</a>
+	</script>
+</div> 
+
+<script src="../assets/layui.js"></script>
+<script>
+layui.use(['element','layedit'], function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  $ = layui.jquery;
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+
+layui.use('table', function(){
+  var table = layui.table;
+  
+  table.render({
+    elem: '#test'
+    ,url:'../assets/data/event.json'
+    ,toolbar: '#toolbarDemo'
+    ,title: '用户数据表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'center'}
+      ,{field:'id', title:'序号', width:80, fixed: 'left', unresize: true, sort: true}
+      ,{field:'matchname', title:'赛事名称', see: 'text'}
+      ,{field:'matchkind', title:'赛事类型', width:150, see: 'text'}
+      ,{field:'matchstart', title:'报名开始', width:120, see: 'text', sort: true}
+      ,{field:'matchend', title:'报名截止', width:120, sort: true}
+      ,{field:'matchbegin', title:'比赛开始', width:120, sort: true}
+      ,{field:'matchover', title:'比赛结束', width:120, sort: true}
+      ,{field:'matchimg', title:'赛事宣传图', width:220, templet: '#matchimg'}
+      ,{field:'background', title:'赛事背景'}
+      ,{field:'operation', title:'操作', toolbar: '#barDemo', width:180}
+    ]]
+    ,page: true
+    ,done: function(res, curr, count){
+	  $('.enroll').on('click',function(){
+		//提示
+		layer.msg('报名成功！', {icon: 1});
+		setTimeout(function(){location.href='event.html'},1000)
+	 })
+  	}
+  });
+});
+</script>
+</body>
+</html>

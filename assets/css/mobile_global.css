@@ -1,0 +1,121 @@
+/*带搜索以及审核check的页面*/
+::-webkit-input-placeholder{color: #999}
+.headaddstu{position: absolute;top:0px;}
+.headfixed{position:fixed;z-index: 999;background-color: white;margin-left: 0;padding: 20px 0;margin-top: 0;}
+.headoutstu{position:fixed;z-index: 999;background-color: white;margin: 0;padding: 20px 0;width: 100%;top:0px;}
+.headcheck{z-index: 10;background-color: white;margin:20px 0;height: 120px;width: 100%;}
+.headadd{z-index: 10;background-color: white;margin:20px 0;height: 120px;width: 90%;}
+.headadd .layui-input-block{margin-left: 0;}
+.headcheck .layui-input-block{margin-left: 0;}
+.top0{top:0px;margin: 0;}
+
+/*首页的色块 */
+.grid-demo{margin: 2px;padding: 34px; line-height: 34px; text-align: center; background-color: #79C48C; color: #fff;}
+.grid-demo-bg1{background-color: #dc7672;color: #fff;}
+.grid-demo-bg2{background-color: #ba403f;color: #fff;}
+.grid-demo-bg3{background-color: #bbd1c5;color: #fff;}
+.grid-demo-bg4{background-color: #6f9e96;color: #fff;}
+.grid-demo-bg5{background-color: #febf02;color: #fff;}
+.grid-demo-bg6{background-color: #fb8c00;color: #fff;}
+.layui-card{margin: 2px;box-shadow: 0 3px 5px 0 rgba(0,0,0,.09);height: 170px;}
+.layui-card-body{height: 39%;overflow: hidden;}
+.layui-card-body img{width: 100%;height: 200px;}
+.matchlink{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.linkbox{box-shadow: 0 3px 5px 0 rgba(0,0,0,.09);height: auto;}
+/*其他自定义样式*/
+a:active{color: #000000 !important;}
+.left{float: left;}
+.right{float: right;}
+.layui-nav{position: fixed;z-index: 999;width: 100%;height: 60px;line-height: 60px;top:0px;}
+.fixed{position: fixed;}
+.blue{background-image:-webkit-linear-gradient(left,#29adeb,#177ce3) !important;}
+.headerimg{width: 100%;height: 200px;}
+.personal{padding: 0;}
+.ma20{margin: 0 20px;}
+.layui-badge{height: 20px;line-height: 20px;}
+.layui-timeline-content{padding-right: 5px;}
+.seachbox{margin:30px 15px;width: 75%;}
+.seach{position: absolute;right: -33%;top:0%;}
+.layui-col-space15{margin: 0;}
+.cfb{padding: 20px;}
+.layui-form{margin-top: 50px;}
+.mt50{margin-top: 50px;}
+.mt60{margin-top: 60px;}
+.mt80{margin-top: 80px;}
+.mt130{margin-top: 130px;}
+.card{padding: 10px; background-color: #F2F2F2;}
+.layui-form-item{margin-bottom: 20px;}
+.cardlink{padding: 10px;}
+.seachlink{padding: 10px 0;}
+.seachmd6{padding: 7.5px 0;}
+.ma5{position: absolute;right: 10px;top:30%;}
+.ma45{position: absolute;right: 70px;top:30%;}
+.ma4{position: absolute;right: 0;top:0%;}
+.ma52{position: absolute;left:2%;top:10%;line-height:2rem;height:2rem;width:3rem;font-size: 14px;border-radius: 20%;}
+.layui-btn-group{position: absolute;right: 10px;}
+.messname{font-size: 20px;font-weight: 700;text-align:center;display:block;line-height: 6rem;letter-spacing: 2px;}
+.messtime{font-size: 18px;color:#CCCCCC;text-align:center;}
+.head{height: 8rem;line-height: 1rem;}
+.matchimg{text-align: center;padding: 20px 0;}
+.matchimg img{width: 70%;}
+.head p{text-indent:2rem;letter-spacing: 2px;}
+h1,h2,h3{font-size: 14px;}
+.ma0{margin: 0;}
+.pa0{padding: 0;}
+.mt3{margin-top: 30px;}
+.mt7{margin-top: 7rem;}
+.mt10{margin-top: 10rem;}
+.sp{top:-1px;position: relative;}
+.bsn{box-shadow: none;}
+.matchimgh{height: 280px;}
+.maimg{height: 60%;padding: 10px;margin-bottom: 10px;}
+.chbox{position:relative;height: 6.5rem;padding: 10px;margin: 5px 5px 5px 0px;border: rgba(204,204,204,0.5) solid 2px;}
+.chbox:checked{border: #92B8B1 solid 2px;transition:width 0.5s;}
+.inchbox{position: absolute;top: 5px;left: 10px;height: 2rem;}
+.bordercolor{border: rgba(111,158,150,0.5) solid 2px !important;}
+.inchbox .layui-form-checkbox i{border: 2px solid rgba(204,204,204,0.5);border-radius: 50%;}
+.chbox img{height: 3rem; width: 3rem; border-radius: 50%;position: absolute;left: 5px;top: 3.5rem;}
+.tip{position: absolute;top: 10px;right: 5px;height: 1.5rem;line-height: 1.5rem;}
+.chbox h4
+{
+	height: 2rem;
+	line-height: 2rem;
+	position: absolute;
+	left: 4rem;
+	top:3.3rem;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	color: #232a2f;
+	font-size: 13px;
+}
+.chbox h5
+{
+	font-weight: 500;
+	font-family: 'Open Sans', sans-serif;
+	color: #909090;
+	font-size: 12px;
+	height: 2rem;
+	line-height: 2rem;
+	position: absolute;
+	left: 4rem;
+	top:5rem;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.perhead{height: 5rem;line-height: 5rem;clear: both;}
+.percard{box-shadow: none;}
+.leftbox{float: left;font-size: 14px;font-family: "微软雅黑";font-weight: 400;}
+.leftbox i{padding: 0 10px 0 0;}
+.rightbox{float: right;}
+.fixed .layui-form-checkbox{height: 38px;line-height: 38px;margin-left: 10px;}
+.fixed .layui-form-checkbox span{padding: 0 18px;}
+.fixed .layui-form-checkbox i{height: 36px;line-height: 36px;width: 30px;}
+.chbox .layui-badge .layui-bg-orange{padding: 0 3px;}
+.pers{padding: 0  0 0 5px;margin-top: 10px;}
+.layui-btn+.layui-btn{margin: 10px 0;}
+.ma2{margin: 20px 5px;}
+.pa0{padding:0;}
+.icon{font-size: 16px;margin: 0;color: white !important;font-weight: 500;padding-right: 5px;}
+
+

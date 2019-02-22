@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>体艺赛事综合管理系统-成长路线页面</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../assets/css/layui.css"  media="all">
+  <link rel="stylesheet" href="../assets/css/mobile_global.css"  media="all">
+</head>
+<body>
+<ul class="layui-nav pa0">
+	<li class="layui-nav-item">
+	  <a class="" href="javascript:;">团队管理</a>
+	  <dl class="layui-nav-child">
+	    <dd><a href="footballmsg.html">团队信息</a></dd>
+	    <dd><a href="add.html">加入球队/艺术团</a></dd>
+	  </dl>
+	</li>
+	<li class="layui-nav-item">
+	  <a href="javascript:;">赛事管理</a>
+	  <dl class="layui-nav-child">
+	    <dd><a href="seematch.html">查看已报名赛事</a></dd>
+	  </dl>
+	</li>
+	<li class="layui-nav-item">
+	  <a href="javascript:;">个人档案与状态</a>
+	  <dl class="layui-nav-child">
+	  	<dd><a href="personal.html">查看个人信息</a></dd>
+	    <dd><a href="grow.html">查看成长路线</a></dd>
+	    <dd><a href="index.html">返回首页</a></dd>
+      <dd><a href="#">退出</a></dd>
+	  </dl>
+	</li>
+</ul>
+<div class="mt80">
+<blockquote class="layui-elem-quote layui-text ma2">
+刘雨涵-成长路线
+</blockquote>	
+<ul class="layui-timeline">
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis"></i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">2018.10.19~2018.11.22<span class="layui-badge ma4">足球</span></h3>
+      <blockquote class="layui-elem-quote layui-quote-nm">
+      <p>
+        <h3>友谊杯足球联赛</h3>
+				  
+					<ul>
+		        <li><h4>神风大风车一队<span class="layui-badge layui-bg-orange ma20">对阵</span>神风大风车二队</h4></li>
+		        <li>进球数：24 个</li>
+		      </ul>
+				</blockquote>
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis"></i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">2018.10.19~2018.11.22<span class="layui-badge ma4">篮球</span></h3>
+      <blockquote class="layui-elem-quote layui-quote-nm">
+      <p>
+        <h3>友谊杯篮球联赛</h3>
+				  
+					<ul>
+		        <li><h4>神风一队<span class="layui-badge layui-bg-orange ma20">对阵</span>神风二队</h4></li>
+		        <li>得分数：24 分</li>
+		      </ul>
+				</blockquote>
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis"></i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">2018.10.19~2018.11.22<span class="layui-badge ma4">艺术</span></h3>
+      <blockquote class="layui-elem-quote layui-quote-nm">
+      <p>
+        <h3>友谊杯艺术联赛</h3>				  
+					<ul>
+		        <li>所获奖项：高中组合唱一等奖</li>
+		      </ul>
+				</blockquote>
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis"></i>
+    <div class="layui-timeline-content layui-text">
+      <div class="layui-timeline-title">过去</div>
+    </div>
+  </li>
+</ul>
+</div>
+<script src="../assets/layui.js"></script>
+<script>
+layui.use('element', function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+</script>
+</body>
+</html>

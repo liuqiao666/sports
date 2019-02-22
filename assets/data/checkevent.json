@@ -1,0 +1,60 @@
+{
+  "code": 0
+  ,"msg": ""
+  ,"count": 2
+  ,"data": [{
+    "id": "1"
+    ,"matchname": "恩阳中学第15届足球运动会"
+    ,"matchkind": "市级"
+    ,"area": "成都市"
+    ,"team": "神风小子足球队"
+    ,"teacher": "刘云"
+    ,"description": "团队描述团队描述团队描述团队描述团队描述"
+    ,"state":"已通过"
+  },{
+    "id": "2"
+    ,"matchname": "恩阳中学第15届足球运动会2"
+    ,"matchkind": "区县级"
+    ,"area": "成都市高新西区"
+    ,"team": "神风小子足球队2"
+    ,"teacher": "王强"
+    ,"description": "团队描述团队描述团队描述团队描述团队描述"
+    ,"state":"已通过"
+  },{
+    "id": "3"
+    ,"matchname": "恩阳中学第15届足球运动会3"
+    ,"matchkind": "区县级"
+    ,"area": "成都市高新西区"
+    ,"team": "神风小子足球队2"
+    ,"teacher": "吴鑫"
+    ,"description": "团队描述团队描述团队描述团队描述团队描述"
+    ,"state":"已通过"    	
+  },{
+    "id": "4"
+    ,"matchname": "恩阳中学第15届足球运动会4"
+    ,"matchkind": "区县级"
+    ,"area": "成都市高新西区"
+    ,"team": "神风小子足球队2"
+    ,"teacher": "吴鑫"
+    ,"description": "团队描述团队描述团队描述团队描述团队描述"
+    ,"state":"已通过"
+  },{
+    "id": "5"
+    ,"matchname": "恩阳中学第15届足球运动会5"
+    ,"matchkind": "校级"
+    ,"area": "巴中市恩阳中学"
+    ,"team": "神风小子足球队2"
+    ,"teacher": "吴鑫"
+    ,"description": "团队描述团队描述团队描述团队描述团队描述"
+    ,"state":"已通过"	
+  },{
+    "id": "6"
+    ,"matchname": "恩阳中学第15届足球运动会6"
+    ,"matchkind": "市级"
+    ,"area": "吴鑫"
+    ,"team": "神风小子足球队2"
+    ,"teacher": "吴鑫"
+    ,"description": "团队描述团队描述团队描述团队描述团队描述"
+    ,"state":"被驳回"
+  }]
+}  

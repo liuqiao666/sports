@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../assets/css/layui.css">
+    <link rel="stylesheet" href="../assets/css/pc_global.css"/>
+    <title>体艺赛事综合管理系统-区县教育局控制台</title>
+</head>
+<body class="layui-view-body">
+ <div class="msgindex">
+    <blockquote class="layui-elem-quote layui-quote-nm">
+        欢迎使用体艺赛事综合管理系统！&nbsp;&nbsp;<span class="layui-badge">区县教育局</span> 
+    </blockquote>
+		<div class="layui-row matb20">
+			<div class="layui-col-xs3">
+			    <section class="panell">
+			        <div class="symbol bgcolor-blue"><i class="layui-icon layui-icon-template-1"></i>
+			        </div>
+			        <div class="value tab-menu">
+					  <a href="javascript:;" data-title="总赛事数量">
+			            <h1>320</h1><span>总赛事数量</span>
+			          </a>
+			        </div>
+			    </section>
+			</div>
+	    <div class="layui-col-xs3">
+	        <section class="panell">
+	            <div class="symbol bgcolor-commred"><i class="layui-icon layui-icon-website"></i>
+	            </div>
+	            <div class="value tab-menu">
+	            	<a href="javascript:;" data-title="总足球队数量">
+			            <h1>1200</h1><span>总足球队数量</span>
+			        </a>
+	            </div>
+	        </section>
+	    </div>
+
+	    <div class="layui-col-xs3">
+	        <section class="panell">
+	            <div class="symbol bgcolor-dark-green"><i class="layui-icon layui-icon-template"></i>
+	            </div>
+	            <div class="value tab-menu">
+	            	<a href="javascript:;" data-title="总篮球队数量">
+			            <h1>1100</h1><span>总篮球队数量</span>
+			        </a>
+	            </div>
+	        </section>
+	    </div>
+
+	    <div class="layui-col-xs3">
+	        <section class="panell">
+	            <div class="symbol bgcolor-yellow-green"><i class="layui-icon layui-icon-theme"></i>
+	            </div>
+	            <div class="value tab-menu">
+	            	<a href="javascript:;" data-title="总艺术团数量">
+			            <h1>1203</h1><span>总艺术团数量</span>
+			        </a>
+	            </div>
+	        </section>
+	    </div>
+
+    </div>
+            
+<fieldset class="layui-elem-field layui-field-title site-title">
+  <legend><a name="default">信息化统计</a></legend>
+</fieldset>           
+<!--相关统计-->
+<div class="layui-row">
+    <div class="layui-col-xs6">
+      <section class="panel">
+		<blockquote class="layui-elem-quote  mr20">区域统计-团队组建总数量</blockquote>
+        <div class="panel-body">
+            <div class="echarts panel_margin" id="area"></div>
+        </div>
+      </section>
+    </div>
+    <div class="layui-col-xs6">
+      <section class="panel">
+      	<blockquote class="layui-elem-quote  mr20">区域统计-团队获奖统计</blockquote>
+        <div class="panel-body">
+            <div class="echarts panel_margin" id="product"></div>
+        </div>
+   		</section>
+    </div>
+    <div class="layui-col-xs6">
+    	<section class="panel">
+        <blockquote class="layui-elem-quote  mr20">全部统计-团队组建一周统计</blockquote>
+        <div class="panel-body">
+            <div class="echarts" id="main"></div>
+        </div>
+    	</section>
+    </div>
+    <div class="layui-col-xs6">
+      <section class="panel">
+        <blockquote class="layui-elem-quote  mr20">全部统计-团队组建年度统计</blockquote>
+        <div class="panel-body">
+            <div class="echarts" id="years"></div>
+        </div>
+      </section>
+    </div>
+</div>
+
+<script src="../assets/layui.js"></script>
+<script src="../assets/js/echarts.min.js"></script>
+<script src="../assets/js/index.js"></script>
+<script>
+ var element = layui.element;
+</script>
+</body>
+</html>

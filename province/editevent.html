@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>体艺赛事综合管理系统-编辑省级赛事</title>
+  <link rel="stylesheet" href="../assets/css/layui.css">
+  <link rel="stylesheet" href="../assets/css/pc_global.css">
+</head>
+<body>
+	<div class="layui-layout layui-layout-admin editevent">
+  <div class="msg">
+	  <blockquote class="layui-elem-quote layui-text ma2">
+		省级赛事发布注意项说明:赛事背景详细说明编写请图文并茂，尽量详细的展现出赛事的特点......
+		</blockquote>
+		<fieldset class="layui-elem-field layui-field-title ma2">
+	  	<legend>编辑省级赛事</legend>
+		</fieldset>
+		<div class="layui-form layui-form-pane" action="">
+			<div class="layui-form-item" pane="">
+		    <label class="layui-form-label">单选框</label>
+		    <div class="layui-input-block">
+		      <input type="radio" name="sex" value="足球" title="足球" checked="">
+		      <input type="radio" name="sex" value="篮球" title="篮球">
+		    </div>
+		  </div>
+		  <div class="layui-form-item">
+		    <label class="layui-form-label">赛事名称</label>
+		    <div class="layui-input-block">
+		      <input type="text" name="title" autocomplete="off" value="恩阳中学第15届足球运动会" class="layui-input">
+		    </div>
+		  </div>
+		  <div class="layui-form-item">
+		    <label class="layui-form-label">赛事类型</label>
+		    <div class="layui-input-block">
+		      <select name="interest" lay-filter="aihao">
+		        <option value="1">五人制</option>
+		        <option value="2">七人制</option>
+		        <option value="3">十一人制</option>
+		      </select>
+		    </div>
+		  </div>
+		  <div class="layui-form-item">
+		    <div class="layui-inline">
+		      <label class="layui-form-label">报名开始</label>
+		      <div class="layui-input-block">
+		        <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" value="2018-11-28">
+		      </div>
+		    </div>
+		    <div class="layui-inline">
+		      <label class="layui-form-label">报名截止</label>
+		      <div class="layui-input-block">
+		        <input type="text" name="date1" id="date1" lay-verify="date1" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" value="2018-11-28">
+		      </div>
+		    </div>
+		    <div class="layui-inline">
+		      <label class="layui-form-label">比赛开始</label>
+		      <div class="layui-input-block">
+		        <input type="text" name="date2" id="date2" lay-verify="date2" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" value="2018-11-28">
+		      </div>
+		    </div>
+		    <div class="layui-inline">
+		      <label class="layui-form-label">比赛结束</label>
+		      <div class="layui-input-block">
+		        <input type="text" name="date3" id="date3" lay-verify="date3" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" value="2018-11-28">
+		      </div>
+		    </div>
+		  </div>
+		  <div class="layui-form-item">
+				<div class="layui-upload">
+				  <div class="layui-upload-list" id="test1">
+				    	<img class="layui-upload-img uploadimg" id="demo1" src="../assets/images/match2.jpg">
+				  </div>
+				</div>  
+			</div>
+		  <div class="layui-form-item layui-form-text">
+		    <label class="layui-form-label">赛事背景详细说明编写</label>
+			<textarea class="layui-textarea" id="LAY_demo1" style="display: none">  
+				赛事背景详细说明编写......
+			</textarea>
+		  </div>
+		  <div class="layui-form-item">
+		    <div class="layui-input-block">
+		      <button class="layui-btn suf" lay-submit="" lay-filter="demo1">立即提交</button>
+		      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+		    </div>
+		  </div>
+		</div>
+<script src="../assets/layui.js"></script>
+<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  //日期
+  laydate.render({
+    elem: '#date'
+  });
+  laydate.render({
+    elem: '#date1'
+  });
+  laydate.render({
+    elem: '#date2'
+  });
+  laydate.render({
+    elem: '#date3'
+  })
+});
+layui.use('layedit', function(){
+  var layedit = layui.layedit
+  ,$ = layui.jquery;
+  
+  //构建一个默认的编辑器
+  var index = layedit.build('LAY_demo1');
+});
+layui.use(['element','layedit'], function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+   $ = layui.jquery;
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+  
+  $('.suf').on('click',function(){
+	layer.msg('更新成功！', {icon: 1});
+	setTimeout(function(){
+	  	window.parent.location.reload();
+	},1000)
+ })
+});
+
+layui.use('upload', function(){
+  var $ = layui.jquery
+  ,upload = layui.upload;
+  
+  //普通图片上传
+  var uploadInst = upload.render({
+    elem: '#test1'
+    ,url: '/upload/'
+    ,before: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#demo1').attr('src', result); //图片链接（base64）
+      });
+    }
+    ,done: function(res){
+      //如果上传失败
+      if(res.code > 0){
+        return layer.msg('上传失败');
+      }
+      //上传成功
+    }
+    ,error: function(){
+      //演示失败状态，并实现重传
+      var demoText = $('#demoText');
+      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+      demoText.find('.demo-reload').on('click', function(){
+        uploadInst.upload();
+      });
+    }
+  })
+});
+</script>
+</body>
+</html>
